@@ -3,8 +3,9 @@
 # Script to make a patient specific QA plan on your phantom
 # The core functionality is in the module make_qa_plan. 
 # The module psqa_gui generates the gui to let you make some choices. 
+# Tested with Python 3.11 and Raystation 2024-B.
 # By Kees Landheer, 2 april 2025.
-#
+# 
 ############################################################################
 
 from sys import exit
