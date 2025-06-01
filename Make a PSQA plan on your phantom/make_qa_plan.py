@@ -9,14 +9,20 @@
 
 from System.Windows import MessageBox, MessageBoxButton, MessageBoxImage 
 from connect import get_current
+from sys import exit
 
-def create_psqa_plan(verification_plan_name, isoc_name, exportfolder_path):    
-    beam_set = get_current("BeamSet")
-    isoc = beam_set.GetIsocenterData(Name=isoc_name)
+def create_psqa_plan(verification_plan_name, isoc_name, exportfolder_path):
+    try:    
+        beam_set = get_current("BeamSet")
+        isoc = beam_set.GetIsocenterData(Name=isoc_name)
+    except Exception as exc:        
+        message = 'No beam set selected. Select a plan.'          
+        exit(message)
+    
     # create the QA plan.
     try:
-        beam_set.CreateQAPlan(PhantomName="230222_Oct4D+1500MR",
-                           PhantomId="230222xx0x",
+        beam_set.CreateQAPlan(PhantomName="Mijn_ionisatiekamer_fantoom", # fill in your own phantom name. 
+                           PhantomId="123456789", # fill in your own phantom id. 
                            QAPlanName=verification_plan_name,
                            IsoCenter={
                                'x': isoc["Position"]["x"], 'y': isoc["Position"]["y"], 'z': isoc["Position"]["z"]},
