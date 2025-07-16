@@ -1,0 +1,92 @@
+{    
+	"baseline": {
+		"PhR_aspiration": {
+			"__enum__": "BaselineToxicityPhysician.GRADE_0"
+		},
+		"PhR_dysphagia": {
+			"__enum__": "BaselineToxicityPhysician.GRADE_0"
+		},
+		"PhR_xerostomia": {
+			"__enum__": "BaselineToxicityPhysician.GRADE_0"
+		},
+		"Q10_rest_needed": {
+			"__enum__": "BaselineToxicityPatient.NOT_AT_ALL"
+		},
+		"Q12_feeling_weak": {
+			"__enum__": "BaselineToxicityPatient.NOT_AT_ALL"
+		},
+		"Q14_nauseated": {
+			"__enum__": "BaselineToxicityPatient.NOT_AT_ALL"
+		},
+		"Q15_vomiting": {
+			"__enum__": "BaselineToxicityPatient.NOT_AT_ALL"
+		},
+		"Q18_tired": {
+			"__enum__": "BaselineToxicityPatient.NOT_AT_ALL"
+		},
+		"Q31_mouth_pain": {
+			"__enum__": "BaselineToxicityPatient.NOT_AT_ALL"
+		},
+		"Q32_jaw_pain": {
+			"__enum__": "BaselineToxicityPatient.NOT_AT_ALL"
+		},
+		"Q33_mouth_soreness": {
+			"__enum__": "BaselineToxicityPatient.NOT_AT_ALL"
+		},
+		"Q34_throat_pain": {
+			"__enum__": "BaselineToxicityPatient.NOT_AT_ALL"
+		},
+		"Q38_choking": {
+			"__enum__": "BaselineToxicityPatient.NOT_AT_ALL"
+		},
+		"Q41_dry_mouth": {
+			"__enum__": "BaselineToxicityPatient.NOT_AT_ALL"
+		},
+		"Q42_sticky_saliva": {
+			"__enum__": "BaselineToxicityPatient.NOT_AT_ALL"
+		},
+		"Q53_trouble_talking_to_people": {
+			"__enum__": "BaselineToxicityPatient.NOT_AT_ALL"
+		},
+		"Q54_trouble_talking_on_phone": {
+			"__enum__": "BaselineToxicityPatient.NOT_AT_ALL"
+		}
+	},
+	"dssinfo": {
+		"Bldys": "Graad 0-1",
+		"Blxer": "Helemaal niet",
+		"Ntcp": "Hh",
+		"Po": "nee",
+		"Tuloc": "Pharynx (oro, naso, hypo)"
+	},
+	"patient_and_plan": {
+		"BeamSetDicomPlanLabel": "01A_headNeck",
+		"CaseBodySite": "Head-neck 34x2Gy",
+		"CaseName": "1:_23-05-08_headNeck",
+		"Patient_ID": "44",
+		"PlanName": "1_P1B1"
+	},
+	"patient_characteristics": {
+		"Age_in_years": "1",
+		"Patient_sex": {
+			"__enum__": "SexPatient.MALE"
+		},
+		"PostOperative": {
+			"__enum__": "PostOperative.NO"
+		},
+		"TreatmentModality": {
+			"__enum__": "TreatmentModality.ACCELERATED_RT"
+		},
+		"TumorSite": {
+			"__enum__": "TumorSite.UNKNOWN"
+		},
+		"Weight_in_kg": "85"
+	},
+	"prediction_and_evaluation": {
+		"1_P1B1": {
+			"Prospective": "Denk je dat het model voor de verschillende toxiteiten een goede complicatiekans heeft berekend voor deze patient? Geef Enter na invullen.",
+			"Retrospective": "Invullen na afronding van de bestralingsbehandeling. En/Of pas na 2 jaar. Heeft 't model voor de verschillende toxiteiten een goede complicatiekans berekend? Geef Enter na invullen.",
+			"number_no_roi_present": "0"
+		}
+	}	
+}

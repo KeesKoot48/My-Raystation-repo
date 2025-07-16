@@ -1,0 +1,71 @@
+{
+    "patient_characteristics": {
+        "Age_in_years": 57,
+        "Patient_sex": {
+            "__enum__": "SexPatient.MALE"
+        },
+        "PostOperative": {
+            "__enum__": "PostOperative.NO"
+        },
+        "TreatmentModality": {
+            "__enum__": "TreatmentModality.ACCELERATED_RT"
+        },
+        "TumorSite": {
+            "__enum__": "TumorSite.OROPHARYNX"
+        },
+        "Weight_in_kg": 110.8
+    },
+    "baseline": {
+        "PhR_aspiration": {
+            "__enum__": "BaselineToxicityPhysician.GRADE_0"
+        },
+        "PhR_dysphagia": {
+            "__enum__": "BaselineToxicityPhysician.GRADE_2"
+        },
+        "PhR_xerostomia": {
+            "__enum__": "BaselineToxicityPhysician.GRADE_0"
+        },
+        "Q10_rest_needed": {
+            "__enum__": "BaselineToxicityPatient.QUITE_A_BIT"
+        },
+        "Q12_feeling_weak": {
+            "__enum__": "BaselineToxicityPatient.QUITE_A_BIT"
+        },
+        "Q14_nauseated": {
+            "__enum__": "BaselineToxicityPatient.A_LITTLE"
+        },
+        "Q15_vomiting": {
+            "__enum__": "BaselineToxicityPatient.A_LITTLE"
+        },
+        "Q18_tired": {
+            "__enum__": "BaselineToxicityPatient.QUITE_A_BIT"
+        },
+        "Q31_mouth_pain": {
+            "__enum__": "BaselineToxicityPatient.VERY_MUCH"
+        },
+        "Q32_jaw_pain": {
+            "__enum__": "BaselineToxicityPatient.VERY_MUCH"
+        },
+        "Q33_mouth_soreness": {
+            "__enum__": "BaselineToxicityPatient.QUITE_A_BIT"
+        },
+        "Q34_throat_pain": {
+            "__enum__": "BaselineToxicityPatient.QUITE_A_BIT"
+        },
+        "Q38_choking": {
+            "__enum__": "BaselineToxicityPatient.A_LITTLE"
+        },
+        "Q41_dry_mouth": {
+            "__enum__": "BaselineToxicityPatient.VERY_MUCH"
+        },
+        "Q42_sticky_saliva": {
+            "__enum__": "BaselineToxicityPatient.VERY_MUCH"
+        },
+        "Q53_trouble_talking_to_people": {
+            "__enum__": "BaselineToxicityPatient.NOT_AT_ALL"
+        },
+        "Q54_trouble_talking_on_phone": {
+            "__enum__": "BaselineToxicityPatient.A_LITTLE"
+        }
+    }
+}

@@ -1,0 +1,1619 @@
+[{
+		"_comment": [
+			"Dit is een voorbeeld van een JSON configuratie file voor RayStation.",
+			"JSON kent echter geen comment mogelijkheden.",
+			"Color - Display color of the ROI. Use a color such as Red or an ARGB value such as #FFFF0000.",
+			"Type - External, PTV, CTV, GTV, TreatedVolume, IrradiatedVolume, Bolus, Avoidance, Organ, Marker,",
+			"Registration, Isocenter, ContrastAgent, Cavity, Support, Fixation, DoseRegion, Control,FieldOfView,",
+			"AcquisitionIsocenter, InitialLaserIsocenter, InitialMatchIsocenter, Undefined",
+			"OrganData.OrganType can be Unknown, Target, OrganAtRisk, Other"
+		]
+	},
+	{
+		"process": {
+			"includeinsteps": ["create_delineation_rois", "check_delineation_rois", "delete_empty_rois"]
+		},
+		"roilist": [{
+				"name": "_X_NotUse",
+				"organtype": "Unknown",
+				"type": "Undefined",
+				"display": {
+					"color": "0, 0, 0"
+				}
+			},
+			{
+				"name": "GTVp1",
+				"organtype": "Target",
+				"type": "Gtv",
+				"display": {
+					"color": "90, 170, 255"
+				}
+			},
+			{
+				"name": "GTVp1^PORT",
+				"organtype": "Target",
+				"type": "Gtv",
+				"display": {
+					"color": "90, 170, 255"
+				}
+			},
+			{
+				"name": "GTVp2",
+				"organtype": "Target",
+				"type": "Gtv",
+				"display": {
+					"color": "128, 255, 128"
+				}
+			},
+			{
+				"name": "GTVn1",
+				"organtype": "Target",
+				"type": "Gtv",
+				"display": {
+					"color": "255, 255, 0"
+				}
+			},
+			{
+				"name": "GTVn2",
+				"organtype": "Target",
+				"type": "Gtv",
+				"display": {
+					"color": "0, 255, 0"
+				}
+			},
+			{
+				"name": "GTVn3",
+				"organtype": "Target",
+				"type": "Gtv",
+				"display": {
+					"color": "189, 255, 255"
+				}
+			},
+			{
+				"name": "GTVn4",
+				"organtype": "Target",
+				"type": "Gtv",
+				"display": {
+					"color": "255, 147, 201"
+				}
+			},
+			{
+				"name": "GTVn5",
+				"organtype": "Target",
+				"type": "Gtv",
+				"display": {
+					"color": "163, 163, 255"
+				}
+			},
+			{
+				"name": "GTVn6",
+				"organtype": "Target",
+				"type": "Gtv",
+				"display": {
+					"color": "255, 196, 136"
+				}
+			},
+			{
+				"name": "CTVp1",
+				"organtype": "Target",
+				"type": "Ctv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["GTVp1"],
+						"margins": [1.0]
+					},
+					"expressionB": {
+						"sources": ["External"]
+					},
+					"operation": "Intersection"
+				},
+				"display": {
+					"color": "100, 100, 255"
+				}
+			},
+			{
+				"name": "CTVp1^PORT",
+				"organtype": "Target",
+				"type": "Ctv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["GTVp1^PORT"],
+						"margins": [1.0]
+					},
+					"expressionB": {
+						"sources": ["External"]
+					},
+					"operation": "Intersection"
+				},
+				"display": {
+					"color": "100, 100, 255"
+				}
+			},
+			{
+				"name": "CTVp1_High",
+				"organtype": "Target",
+				"type": "Ctv",
+				"display": {
+					"color": "204, 0, 204"
+				},
+				"expansion": {
+					"expressionA": {
+						"sources": ["_X_NotUse"],
+						"margins": [0.5],
+						"type": "Expand"
+					},
+					"expressionB": {
+						"sources": ["CTVp1"]
+					},
+					"operation": "Intersection"
+				}
+			},
+			{
+				"name": "CTVp2",
+				"organtype": "Target",
+				"type": "Ctv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["GTVp2"],
+						"margins": [1.0]
+					},
+					"expressionB": {
+						"sources": ["External"]
+					},
+					"operation": "Intersection"
+				},
+				"display": {
+					"color": "0, 234, 117"
+				}
+			},
+			{
+				"name": "CTVp2_High",
+				"organtype": "Target",
+				"type": "Ctv",
+				"display": {
+					"color": "255, 29, 29"
+				},
+				"expansion": {
+					"expressionA": {
+						"sources": ["_X_NotUse"],
+						"margins": [0.5],
+						"type": "Expand"
+					},
+					"expressionB": {
+						"sources": ["CTVp2"]
+					},
+					"operation": "Intersection"
+				}
+			},
+			{
+				"name": "CTVn_L",
+				"organtype": "Target",
+				"type": "Ctv",
+				"display": {
+					"color": "0,150, 0"
+				}
+			},
+			{
+				"name": "CTVn_R",
+				"organtype": "Target",
+				"type": "CTV",
+				"display": {
+					"color": "0, 255, 255"
+				}
+			},
+			{
+				"name": "CTVn_Spc_Retrophars",
+				"organtype": "Target",
+				"type": "CTV",
+				"display": {
+					"color": "255, 0, 128"
+				}
+			},
+			{
+				"name": "CTVn1",
+				"organtype": "Target",
+				"type": "Ctv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["GTVn1"],
+						"margins": [0.5]
+					},
+					"expressionB": {
+						"sources": ["External"]
+					},
+					"operation": "Intersection"
+				},
+				"display": {
+					"color": "255, 128, 0"
+				}
+			},
+			{
+				"name": "CTVn2",
+				"organtype": "Target",
+				"type": "Ctv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["GTVn2"],
+						"margins": [0.5]
+					},
+					"expressionB": {
+						"sources": ["External"]
+					},
+					"operation": "Intersection"
+				},
+				"display": {
+					"color": "0, 150, 0"
+				}
+			},
+			{
+				"name": "CTVn3",
+				"organtype": "Target",
+				"type": "Ctv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["GTVn3"],
+						"margins": [0.5]
+					},
+					"expressionB": {
+						"sources": ["External"]
+					},
+					"operation": "Intersection"
+				},
+				"display": {
+					"color": "0, 255, 255"
+				}
+			},
+			{
+				"name": "CTVn4",
+				"organtype": "Target",
+				"type": "Ctv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["GTVn4"],
+						"margins": [0.5]
+					},
+					"expressionB": {
+						"sources": ["External"]
+					},
+					"operation": "Intersection"
+				},
+				"display": {
+					"color": "218, 0, 109"
+				}
+			},
+			{
+				"name": "CTVn5",
+				"organtype": "Target",
+				"type": "Ctv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["GTVn5"],
+						"margins": [0.5]
+					},
+					"expressionB": {
+						"sources": ["External"]
+					},
+					"operation": "Intersection"
+				},
+				"display": {
+					"color": "128, 128, 255"
+				}
+			},
+			{
+				"name": "CTVn6",
+				"organtype": "Target",
+				"type": "Ctv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["GTVn6"],
+						"margins": [0.5]
+					},
+					"expressionB": {
+						"sources": ["External"]
+					},
+					"operation": "Intersection"
+				},
+				"display": {
+					"color": "250, 113, 10"
+				}
+			},
+			{
+				"name": "PTVt_Low",
+				"organtype": "Target",
+				"type": "Ptv",
+				"allowempty": false,
+				"deleteempty": false,
+				"expansion": {
+					"margins": [0.3],
+					"sources": ["_X_NotUse"]
+				},
+				"display": {
+					"color": "0, 0, 255"
+				}
+			},
+			{
+				"name": "PTVt_Mid",
+				"organtype": "Target",
+				"type": "Ptv",
+				"expansion": {
+					"margins": [0.3],
+					"sources": ["_X_NotUse"]
+				},
+				"display": {
+					"color": "0, 151, 75"
+				}
+			},
+			{
+				"name": "PTVt_High",
+				"organtype": "Target",
+				"type": "Ptv",
+				"expansion": {
+					"margins": [0.3],
+					"sources": ["_X_NotUse"]
+				},
+				"display": {
+					"color": "102, 0, 102"
+				}
+			},
+			{
+				"name": "Brain",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 0, 0"
+				}
+			},
+			{
+				"name": "BrainStem",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 255, 0"
+				}
+			},
+			{
+				"name": "Cerebellum",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "0, 255, 127"
+				}
+			},
+			{
+				"name": "Chiasm",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 255, 204"
+				}
+			},
+			{
+				"name": "Cochlea_L",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 165, 0"
+				}
+			},
+			{
+				"name": "Cochlea_R",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 128, 64"
+				}
+			},
+			{
+				"name": "Cricopharyngeus_Inlet",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 0, 128"
+				}
+			},
+			{
+				"name": "Lung_L",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 51, 204"
+				}
+			},
+			{
+				"name": "Lung_R",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "0, 255, 0"
+				}
+			},
+			{
+				"name": "Esophagus_Upper",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 128, 64"
+				}
+			},
+			{
+				"name": "Eye_L",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"autogenerate": {
+					"type": "Model",
+					"CaseType": "HeadNeck",
+					"ModelName": "Eye (Left)"
+				},
+				"display": {
+					"color": "0, 255, 255"
+				}
+			},
+			{
+				"name": "Eye_R",
+				"display": {
+					"color": "255, 128, 64"
+				},
+				"type": "Organ",
+				"organtype": "OrganAtRisk",
+				"autogenerate": {
+					"type": "Model",
+					"CaseType": "HeadNeck",
+					"ModelName": "Eye (Right)"
+				}
+			},
+			{
+				"name": "Glottis",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "0, 255, 255"
+				}
+			},
+			{
+				"name": "Larynx_SG",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 128, 64"
+				}
+			},
+			{
+				"name": "Larynx",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"expansion": {
+					"sources": ["Glottis", "Larynx_SG"]
+				},
+				"display": {
+					"color": "180, 176, 0"
+				}
+			},
+			{
+				"name": "Lens_L",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 51, 204"
+				}
+			},
+			{
+				"name": "Lens_R",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "0, 255, 0"
+				}
+			},
+			{
+				"name": "Lips",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "180, 176, 0"
+				}
+			},
+			{
+				"name": "Mandible",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "0, 255, 255"
+				}
+			},
+			{
+				"name": "Muc_Buccal_L",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 255, 0"
+				}
+			},
+			{
+				"name": "Muc_Buccal_R",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 128, 192"
+				}
+			},
+			{
+				"name": "Musc_Constrict_I",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 255, 204"
+				}
+			},
+			{
+				"name": "Musc_Constrict_M",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "0, 128, 0"
+				}
+			},
+			{
+				"name": "Musc_Constrict_S",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "139, 69, 19"
+				}
+			},
+			{
+				"name": "Musc_Constrict",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"expansion": {
+					"sources": ["Musc_Constrict_I", "Musc_Constrict_S", "Musc_Constrict_M"]
+				},
+				"display": {
+					"color": "255, 0, 0"
+				}
+			},
+			{
+				"name": "Musc_Pterygoideus_L",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 90, 0"
+				}
+			},
+			{
+				"name": "Musc_Pterygoideus_R",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 150, 0"
+				}
+			},
+			{
+				"name": "OpticNerve_L",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 128, 192"
+				}
+			},
+			{
+				"name": "OpticNerve_R",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 83, 83"
+				}
+			},
+			{
+				"name": "OralCavity",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "200, 0, 70"
+				}
+			},
+			{
+				"name": "Parotid_L",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "0, 255, 127"
+				}
+			},
+			{
+				"name": "Parotid_R",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "0, 64, 64"
+				}
+			},
+			{
+				"name": "Pituitary",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "180, 176, 0"
+				}
+			},
+			{
+				"name": "SpinalCord",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"allowempty": false,
+				"deleteempty": false,
+				"display": {
+					"color": "0,255,255"
+				}
+			},
+			{
+				"name": "Submandibular_L",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "128, 0, 64"
+				}
+			},
+			{
+				"name": "Submandibular_R",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "128, 0, 255"
+				}
+			},
+			{
+				"name": "Thyroid",
+				"organtype": "OrganAtRisk",
+				"type": "Organ",
+				"display": {
+					"color": "255, 255, 0"
+				}
+			},
+			{
+				"name": "_UPGRADE_SpinalCord_Cervical",
+				"organtype": "Other",
+				"type": "Undefined",
+				"display": {
+					"color": "255, 192, 203"
+				}
+			},
+			{
+				"name": "External",
+				"autogenerate": {
+					"type": "External"
+				},
+				"display": {
+					"color": "248, 203, 192"
+				},
+				"type": "External",
+				"organtype": "OrganAtRisk",
+				"allowempty": false,
+				"deleteempty": false
+			}
+		]
+	},
+	{
+		"process": {
+			"includeinsteps": ["create_derived_rois", "check_derived_rois"]
+		},
+		"roilist": [{
+				"name": "_External-0.5",
+				"organtype": "Unknown",
+				"type": "Undefined",
+				"expansion": {
+					"type": "Contract",
+					"margins": [0.5],
+					"sources": ["External"]
+				},
+				"display": {
+					"color": "192, 192, 192"
+				}
+			},
+			{
+				"name": "_PTVt_Low&_External-0.5",
+				"organtype": "Target",
+				"type": "Ptv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["PTVt_Low"]
+					},
+					"expressionB": {
+						"type": "Contract",
+						"margins": [0.5],
+						"sources": ["External"]
+					},
+					"operation": "Intersection"
+				},
+				"display": {
+					"color": "255, 255, 0"
+				}
+			},
+			{
+				"name": "_PTVt_Mid&_External-0.5",
+				"organtype": "Target",
+				"type": "Ptv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["PTVt_Mid"]
+					},
+					"expressionB": {
+						"type": "Contract",
+						"margins": [0.5],
+						"sources": ["External"]
+					},
+					"operation": "Intersection"
+				},
+				"display": {
+					"color": "255, 0, 0"
+				}
+			},
+			{
+				"name": "_PTVt_High&_External-0.5",
+				"organtype": "Target",
+				"type": "Ptv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["PTVt_High"]
+					},
+					"expressionB": {
+						"type": "Contract",
+						"margins": [0.5],
+						"sources": ["External"]
+					},
+					"operation": "Intersection"
+				},
+				"display": {
+					"color": "0, 128, 0"
+				}
+			},
+			{
+				"name": "_PTVt_Boost&_External-0.5",
+				"organtype": "Target",
+				"type": "Ptv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["PTVt_Boost"]
+					},
+					"expressionB": {
+						"type": "Contract",
+						"margins": [0.5],
+						"sources": ["External"]
+					},
+					"operation": "Intersection"
+				},
+				"display": {
+					"color": "255, 192, 203"
+				}
+			},
+			{
+				"name": "_PTVt_Low_Opti",
+				"organtype": "Target",
+				"type": "Ptv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["_PTVt_Low&_External-0.5"]
+					},
+					"expressionB": {
+						"sources": ["PTVt_Mid", "PTVt_High", "PTVt_Boost"]
+					},
+					"operation": "Subtraction"
+				},
+				"display": {
+					"color": "0, 0, 255"
+				}
+			},
+			{
+				"name": "_PTVt_Mid_Opti",
+				"organtype": "Target",
+				"type": "Ptv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["_PTVt_Mid&_External-0.5"]
+					},
+					"expressionB": {
+						"sources": ["PTVt_High", "PTVt_Boost"]
+					},
+					"operation": "Subtraction"
+				},
+				"display": {
+					"color": "0, 151, 75"
+				}
+			},
+			{
+				"name": "_PTVt_High_Opti",
+				"organtype": "Target",
+				"type": "Ptv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["_PTVt_High&_External-0.5"]
+					},
+					"expressionB": {
+						"sources": ["PTVt_Boost"]
+					},
+					"operation": "Subtraction"
+				},
+				"display": {
+					"color": "102, 0, 102"
+				}
+			},
+			{
+				"name": "_PTVt_Low_Opti+0.5",
+				"organtype": "Target",
+				"type": "Ptv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["_PTVt_Low&_External-0.5"]
+					},
+					"expressionB": {
+						"sources": ["PTVt_Mid", "PTVt_High", "PTVt_Boost"],
+						"margins": [0.5]
+					},
+					"operation": "Subtraction"
+				},
+				"display": {
+					"color": "139, 36, 19"
+				}
+			},
+			{
+				"name": "_PTVt_Mid_Opti+0.5",
+				"organtype": "Target",
+				"type": "Ptv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["_PTVt_Mid&_External-0.5"]
+					},
+					"expressionB": {
+						"sources": ["PTVt_High", "PTVt_Boost"],
+						"margins": [0.5]
+					},
+					"operation": "Subtraction"
+				},
+				"display": {
+					"color": "255, 0, 255"
+				}
+			},
+			{
+				"name": "_PTVt_High_Opti+0.5",
+				"organtype": "Target",
+				"type": "Ptv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["_PTVt_High&_External-0.5"]
+					},
+					"expressionB": {
+						"sources": ["PTVt_Boost"],
+						"margins": [0.5]
+					},
+					"operation": "Subtraction"
+				},
+				"display": {
+					"color": "0, 0, 255"
+				}
+			},
+			{
+				"name": "_CTVt_High",
+				"organtype": "Target",
+				"type": "Ctv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["CTVp1_High", "CTVp2_High", "CTVn1", "CTVn2", "CTVn3", "CTVn4", "CTVn5", "CTVn6"]
+					},
+					"expressionB": {
+						"type": "Contract",
+						"margins": [0.5],
+						"sources": ["External"]
+					},
+					"operation": "Intersection"
+				},
+				"display": {
+					"color": "127, 127, 127"
+				}
+			},
+			{
+				"name": "_CTVnt_Low",
+				"organtype": "Target",
+				"type": "Ctv",
+				"expansion": {
+					"expressionA": {
+						"sources": ["CTVp1", "CTVn_L", "CTVn_R"]
+					},
+					"expressionB": {
+						"type": "Expand",
+						"margins": [0.3],
+						"sources": ["PTVt_High"]
+					},
+					"operation": "Subtraction"
+				},
+				"display": {
+					"color": "127, 127, 127"
+				}
+			},
+			{
+				"organtype": "OrganAtRisk",
+				"name": "_Lungs_Opti",
+				"type": "Organ",
+				"expansion": {
+					"expressionA": {
+						"sources": ["Lung_L", "Lung_R"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["GTVp1", "GTVp2", "GTVp3", "GTVn1", "GTVn2", "GTVn3", "GTVn4", "GTVn5", "GTVn6"]
+					}
+				},
+				"display": {
+					"color": "127,127,127"
+				}
+			},
+			{
+				"name": "_BrainStem+0.2",
+				"organtype": "Other",
+				"type": "Organ",
+				"expansion": {
+					"margins": [0.2],
+					"sources": ["BrainStem"]
+				},
+				"display": {
+					"color": "255, 0, 0"
+				}
+			},
+			{
+				"name": "_Cochlea_L+0.5",
+				"organtype": "Other",
+				"type": "Organ",
+				"expansion": {
+					"margins": [0.5],
+					"sources": ["Cochlea_L"]
+				},
+				"display": {
+					"color": "0, 0, 255"
+				}
+			},
+			{
+				"name": "_Cochlea_R+0.5",
+				"organtype": "Other",
+				"type": "Organ",
+				"expansion": {
+					"margins": [0.5],
+					"sources": ["Cochlea_R"]
+				},
+				"display": {
+					"color": "255, 0, 0"
+				}
+			},
+			{
+				"name": "_Lens_L+0.1",
+				"organtype": "Other",
+				"type": "Organ",
+				"expansion": {
+					"margins": [0.1],
+					"sources": ["Lens_L"]
+				},
+				"display": {
+					"color": "255, 51, 204"
+				}
+			},
+			{
+				"name": "_Lens_R+0.1",
+				"organtype": "Other",
+				"type": "Organ",
+				"expansion": {
+					"margins": [0.1],
+					"sources": ["Lens_R"]
+				},
+				"display": {
+					"color": "0, 255, 0"
+				}
+			},
+			{
+				"name": "_Parotid_L-PTVt_Opti",
+				"organtype": "Other",
+				"type": "Organ",
+				"expansion": {
+					"expressionA": {
+						"sources": ["Parotid_L"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Low", "PTVt_Mid", "PTVt_High", "PTVt_Boost"],
+						"margins": [0.7]
+					}
+				},
+				"display": {
+					"color": "139, 69, 19"
+				}
+			},
+			{
+				"name": "_Parotid_R-PTVt_Opti",
+				"organtype": "Other",
+				"type": "Organ",
+				"expansion": {
+					"expressionA": {
+						"sources": ["Parotid_R"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Low", "PTVt_Mid", "PTVt_High", "PTVt_Boost"],
+						"margins": [0.7]
+					}
+				},
+				"display": {
+					"color": "0, 255, 255"
+				}
+			},
+			{
+				"name": "_SpinalCord+0.5",
+				"organtype": "Other",
+				"type": "Organ",
+				"expansion": {
+					"expressionA": {
+						"margins": [0.5],
+						"sources": ["SpinalCord"]
+					},
+					"operation": "Intersection",
+					"expressionB": {
+						"sources": ["External"]
+					}
+				},
+				"display": {
+					"color": "0, 0, 255"
+
+				}
+			},
+			
+			{
+				"name": "_X_R1_PTVt_Boost",
+				"organtype": "Unknown",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["PTVt_Boost"],
+						"margins": [0.5]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Boost"],
+						"margins": [0.01]
+					}
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			},
+			{
+				"name": "_R1_PTVt_Boost_Opti",
+				"organtype": "Other",
+				"type": "Control",
+				"allsourcesmustbepresent": true,
+				"expansion": {
+					"expressionA": {
+						"sources": ["_X_R1_PTVt_Boost"]
+					},
+					"operation": "Intersection",
+					"expressionB": {
+						"sources": ["External"]
+					}
+				},
+				"display": {
+					"color": "253, 255, 157"
+				}
+			},
+			{
+				"name": "_X_R1_PTVt_High",
+				"organtype": "Unknown",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["PTVt_High", "PTVt_Boost", "_X_R1_PTVt_Boost"],
+						"margins": [0.5]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_High", "PTVt_Boost", "_X_R1_PTVt_Boost"],
+						"margins": [0.01]
+					}
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			},
+			{
+				"name": "_R1_PTVt_High_Opti",
+				"organtype": "Other",
+				"type": "Control",
+				"allsourcesmustbepresent": true,
+				"expansion": {
+					"expressionA": {
+						"sources": ["_X_R1_PTVt_High"]
+					},
+					"operation": "Intersection",
+					"expressionB": {
+						"sources": ["External"]
+					}
+				},
+				"display": {
+					"color": "253, 255, 157"
+				}
+			},
+			{
+				"name": "_X_R1_PTVt_Mid",
+				"organtype": "Unknown",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["PTVt_Mid", "PTVt_High", "_X_R1_PTVt_High"],
+						"margins": [0.5],
+						"allsourcesmustbepresent": true
+					},
+					"operation": "Union",
+					"expressionB": {
+						"sources": ["PTVt_Boost", "_X_R1_PTVt_Boost"],
+						"margins": [0.5]
+					}
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			},
+			{
+				"name": "_R1_PTVt_Mid_Opti",
+				"organtype": "Other",
+				"type": "Control",
+				"expansion": {
+					"expressionA": {
+						"sources": ["_X_R1_PTVt_Mid", "External"],
+						"operation": "Intersection",
+						"allsourcesmustbepresent": true
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Mid", "PTVt_Boost", "_X_R1_PTVt_Boost", "PTVt_High", "_X_R1_PTVt_High"],
+						"margins": [0.01]
+					}
+				},
+				"display": {
+					"color": "253, 255, 157"
+				}
+			},
+			{
+				"name": "_X_R1_PTVt_Low",
+				"organtype": "Unknown",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["PTVt_Low", "PTVt_Mid", "_X_R1_PTVt_Mid", "PTVt_High", "_X_R1_PTVt_High", "PTVt_Boost", "_X_R1_PTVt_Boost"],
+						"margins": [0.5]
+					},
+					"operation": "Intersection",
+					"expressionB": {
+						"sources": ["External"]
+					}
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			},
+			{
+				"name": "_R1_PTVt_Low_Opti",
+				"organtype": "Other",
+				"type": "Control",
+				"expansion": {
+					"expressionA": {
+						"sources": ["_X_R1_PTVt_Low"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Low", "PTVt_Boost", "_X_R1_PTVt_Boost", "PTVt_High", "_X_R1_PTVt_High", "PTVt_Mid", "_X_R1_PTVt_Mid"],
+						"margins": [0.01]
+					}
+				},
+				"display": {
+					"color": "253, 255, 157"
+				}
+			},
+			{
+				"name": "_External_Opti",
+				"organtype": "Other",
+				"type": "Control",
+				"expansion": {
+					"expressionA": {
+						"sources": ["External"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Low", "PTVt_Mid", "PTVt_High", "PTVt_Boost", "_R1_PTVt_Low_Opti", "_R1_PTVt_Mid_Opti", "_R1_PTVt_High_Opti", "_R1_PTVt_Boost_Opti"],
+						"margins": [0.5]
+					}
+				},
+				"display": {
+					"color": "253, 255, 157"
+				}
+			},
+			{
+				"name": "_Scatter",
+				"organtype": "Unknown",
+				"type": "Undefined",
+				"deleteempty": false,
+				"display": {
+					"color": "178, 178, 178"
+				}
+			},
+			{
+				"name": "_DoseCtrl_Ventr",
+				"type": "Control",
+				"organtype": "Other",
+				"allowempty": true,
+				"deleteempty": false,
+				"display": {
+					"color": "255, 0, 0"
+				}
+			},
+			{
+				"name": "_DoseCtrl_Dors",
+				"type": "Control",
+				"organtype": "Other",
+				"allowempty": true,
+				"deleteempty": false,
+				"display": {
+					"color": "149, 78, 202"
+				}
+			},
+			{
+				"name": "_DoseCtrl_Med",
+				"type": "Control",
+				"organtype": "Other",
+				"allowempty": true,
+				"deleteempty": false,
+				"display": {
+					"color": "128, 255, 128"
+				}
+			},
+			{
+				"name": "_X_PTVt_Low_Expand",
+				"organtype": "Unknown",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"margins": [1.0, 1.0, 5.0, 5.0, 5.0, 5.0],
+						"sources": ["PTVt_Low"]
+					},
+					"expressionB": {
+						"type": "Contract",
+						"margins": [0.5],
+						"sources": ["External"]
+					},
+					"operation": "Intersection"
+				},
+				"display": {
+					"color": "178, 178, 178"
+				}
+			},
+			{
+				"name": "_CB_PTVt_Low",
+				"organtype": "Unknown",
+				"type": "Undefined",
+				"allowempty": false,
+				"deleteempty": false,
+				"expansion": {
+					"sources": ["_PTVt_Low&_External-0.5"]
+				},
+				"display": {
+					"color": "0, 255, 255"
+				}
+			},
+			{
+				"name": "_CB_PTVt_Mid",
+				"organtype": "Unknown",
+				"type": "Undefined",
+				"allowempty": true,
+				"deleteempty": true,
+				"expansion": {
+					"sources": ["_PTVt_Mid&_External-0.5"]
+				},
+				"display": {
+					"color": "255, 255, 0"
+				}
+			},
+			{
+				"name": "_CB_PTVt_High",
+				"organtype": "Unknown",
+				"type": "Undefined",
+				"allowempty": true,
+				"deleteempty": true,
+				"expansion": {
+					"sources": ["_PTVt_High&_External-0.5"]
+				},
+				"display": {
+					"color": "0, 255, 0"
+				}
+			},
+			{
+				"name": "_CB_PTVt_Boost",
+				"organtype": "Unknown",
+				"type": "Undefined",
+				"allowempty": true,
+				"deleteempty": true,
+				"expansion": {
+					"sources": ["PTVt_Boost"]
+				},
+				"display": {
+					"color": "255, 0, 102"
+				}
+			},
+			{
+				"name": "_CB_Mask_p+n",
+				"organtype": "Unknown",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["_X_PTVt_Low_Expand"],
+						"margins": [0, 2, 0, 0, 0, 0],
+						"type": "Contract"
+					},
+					"expressionB": {
+						"margins": [0.5],
+						"sources": ["_Scatter"]
+					},
+					"operation": "Subtraction"
+				},
+				"display": {
+					"color": "128,0,0"
+				}
+			},
+			{
+				"name": "_CB_95%^1stDoseLevel",
+				"type": "Undefined",
+				"organtype": "Unknown",
+				"deleteempty": false,
+				"display": {
+					"color": "255, 0, 0"
+				}
+			},
+			{
+				"name": "_CB_95%^2ndDoseLevel",
+				"type": "Undefined",
+				"organtype": "Unknown",
+				"deleteempty": false,
+				"display": {
+					"color": "235, 235, 35"
+				}
+			},
+			{
+				"name": "_CB_95%^3thDoseLevel",
+				"type": "Undefined",
+				"organtype": "Unknown",
+				"deleteempty": false,
+				"display": {
+					"color": "0, 255, 255"
+				}
+			},
+			{
+				"name": "_CB_95%^4thDoseLevel",
+				"type": "Undefined",
+				"organtype": "Unknown",
+				"deleteempty": false,
+				"display": {
+					"color": "25, 120, 120"
+				}
+			},
+			{
+				"name": "_CB_SpinalCordDose",
+				"type": "Undefined",
+				"organtype": "Unknown",
+				"deleteempty": false,
+				"display": {
+					"color": "255, 0, 128"
+				}
+			},
+			{
+				"organtype": "Unknown",
+				"name": "_OralCavity_OUT",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["OralCavity"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Low"],
+						"margins": [0.5]
+					}
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			},
+			{
+				"organtype": "Unknown",
+				"name": "_Musc_Constrict_S_OUT",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["Musc_Constrict_S"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Low"],
+						"margins": [0.5]
+					}
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			},
+			{
+				"organtype": "Unknown",
+				"name": "_Musc_Constrict_M_OUT",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["Musc_Constrict_M"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Low"],
+						"margins": [0.5]
+					}
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			},
+			{
+				"organtype": "Unknown",
+				"name": "_Musc_Constrict_I_OUT",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["Musc_Constrict_I"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Low"],
+						"margins": [0.5]
+					}
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			},
+			{
+				"organtype": "Unknown",
+				"name": "_Parotid_L_OUT",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["Parotid_L"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Low"],
+						"margins": [0.5]
+					}
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			},
+			{
+				"organtype": "Unknown",
+				"name": "_Parotid_R_OUT",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["Parotid_R"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Low"],
+						"margins": [0.5]
+					}
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			},
+			{
+				"name": "Submandibulae",
+				"organtype": "Unknown",
+				"type": "Undefined",
+				"expansion": {
+					"sources": ["Submandibular_L", "Submandibular_R"]
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			},
+			{
+				"organtype": "Unknown",
+				"name": "_Submandibulae_OUT",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["Submandibulae"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Low"],
+						"margins": [0.5]
+					}
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			},
+			{
+				"organtype": "Unknown",
+				"name": "_Crico_OUT",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["Cricopharyngeus_Inlet"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Low"],
+						"margins": [0.5]
+					}
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			},
+			{
+				"organtype": "Unknown",
+				"name": "_Esop_OUT",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["Esophagus_Upper"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Low"],
+						"margins": [0.5]
+					}
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			},
+			{
+				"organtype": "Unknown",
+				"name": "_Subman_R_OUT",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["Submandibular_R"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Low"],
+						"margins": [0.5]
+					}
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			},
+			{
+				"organtype": "Unknown",
+				"name": "_Subman_L_OUT",
+				"type": "Undefined",
+				"expansion": {
+					"expressionA": {
+						"sources": ["Submandibular_L"]
+					},
+					"operation": "Subtraction",
+					"expressionB": {
+						"sources": ["PTVt_Low"],
+						"margins": [0.5]
+					}
+				},
+				"display": {
+					"color": "128, 128, 128"
+				}
+			}
+		]
+	}
+]
