@@ -4,8 +4,8 @@ from json import load,loads, dump, JSONEncoder
 from tkinter.filedialog import asksaveasfile, askopenfile
 
 # custom
-from citor.enum_module import EnumEncoder, convert_enum_dict_to_enum
-from citor.constants import TextFormatConstants, SaveLocation
+from enum_module import EnumEncoder, convert_enum_dict_to_enum
+from constants import TextFormatConstants, SaveLocation
 
 # unpacking dict, list, namedtuple and tuple. 
 def unpack(obj):

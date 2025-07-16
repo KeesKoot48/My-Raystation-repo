@@ -10,7 +10,7 @@ from tkinter import Label, Button, Tk
 from tkinter.ttk import Notebook
 
 # custom
-from citor.tabs import TabCitorProfile, TabBasicInputAndBaseline, TabRadiationDose
+from tabs import TabCitorProfile, TabBasicInputAndBaseline, TabRadiationDose
 
 class MyRootWindow(Tk):		
 	def __init__(self):		

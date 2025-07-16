@@ -11,10 +11,10 @@ from os import path
 from enum import Enum
 
 # custom
-from citor.utilities import print_dictionary, dump_dict_to_json_file, open_json_file
-from citor.constants import TestScriptsConstants, PredictorValueConstants,  TextFormatConstants, SaveLocation
-from citor.CITOR_profile_head_and_neck import CitorProfile
-from citor.enum_module import sex_dictionary, TumorSite,TreatmentModality, \
+from utilities import print_dictionary, dump_dict_to_json_file, open_json_file
+from constants import TestScriptsConstants, PredictorValueConstants,  TextFormatConstants, SaveLocation
+from CITOR_profile_head_and_neck import CitorProfile
+from enum_module import sex_dictionary, TumorSite,TreatmentModality, \
     BaselineToxicityPatient, BaselineToxicityPhysician, PostOperative, EnumEncoder
 
 def update_external_citordata_datasource(ids):   
@@ -44,7 +44,7 @@ class TabBasicInputAndBaseline(Frame):
         row_count = 0
         set_combobox_width = 25
         self.basic_input_variable_dict={}
-        self.postoperative_explain_label_text = StringVar()
+        self.postoperative_explain_label_text = StringVar(self)
         self.number_no_roi_present_var = StringVar(self, self.ids.citor_info["prediction_and_evaluation"][self.ids.citor_info["patient_and_plan"]["PlanName"]]["number_no_roi_present"])
 
         self.comboboxes_enum_list = [TumorSite, TreatmentModality, PostOperative]
@@ -378,17 +378,17 @@ class TabRadiationDose(Frame):
             organ_label_nl_right.grid(row = row_count, column = 1,  columnspan = 1, sticky = 'W', padx = self.padx_indent_level1, pady = self.pady_indent_level)                           
             self.labeltext_dictionary_dose_parameters[key]= {}
             # d_mean
-            my_string_var_dmean = StringVar("")            
+            my_string_var_dmean = StringVar(self,"")            
             self.labeltext_dictionary_dose_parameters[key]["Dmean_Gy"]= my_string_var_dmean
             organ_label_d_mean = Label(self,textvariable=my_string_var_dmean)            
             organ_label_d_mean.grid(row = row_count, column = 2,  columnspan = 1, sticky = 'W', padx = self.padx_indent_level1, pady = self.pady_indent_level)                         
             # V40_fraction            
-            my_string_var_V40_fraction = StringVar("")            
+            my_string_var_V40_fraction = StringVar(self,"")            
             self.labeltext_dictionary_dose_parameters[key]["V40_fraction"]= my_string_var_V40_fraction
             organ_label_V40 = Label(self,textvariable=my_string_var_V40_fraction)            
             organ_label_V40.grid(row = row_count, column = 3,  columnspan = 1, sticky = 'W', padx = self.padx_indent_level1, pady = self.pady_indent_level)             
             # Volume           
-            my_string_var_Volume = StringVar("")
+            my_string_var_Volume = StringVar(self,"")
             self.labeltext_dictionary_dose_parameters[key]["Volume_cm3"]= my_string_var_Volume
             organ_label_Volume_cm3 = Label(self,textvariable=my_string_var_Volume)            
             organ_label_Volume_cm3.grid(row = row_count, column = 4,  columnspan = 1, sticky = 'W', padx = self.padx_indent_level1, pady = self.pady_indent_level)    

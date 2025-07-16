@@ -16,12 +16,12 @@ from math import exp
 from matplotlib.pyplot import gca, setp
 
 # custom 
-from citor.create_predictor_dict import create_predictor_dictionary
-from citor.ntcp_model_name_with_list_dictionaries import load_coefficients_per_ntcp_dict, load_predictors_per_ntcp_dict
-from citor.citor_coefficient_values_dict import load_citor_coefficient_values_dictionary
-from citor.constants import PredictorValueConstants
+from create_predictor_dict import create_predictor_dictionary
+from ntcp_model_name_with_list_dictionaries import load_coefficients_per_ntcp_dict, load_predictors_per_ntcp_dict
+from citor_coefficient_values_dict import load_citor_coefficient_values_dictionary
+from constants import PredictorValueConstants
 
-from citor.heatmap import create_heatmap_image, Annotation
+from heatmap import create_heatmap_image, Annotation
 
 # compute the sigmoid (give the chance as a percentage)
 def sigmoid_perc(x):

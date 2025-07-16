@@ -17,8 +17,8 @@
 #######################################################################
 
 # custom libraries:
-from citor.data_input import InputDataStructure
-from citor.mygui import MyWindow, MyRootWindow
+from data_input import InputDataStructure
+from mygui import MyWindow, MyRootWindow
 
 def main():   
     mrw = MyRootWindow()    

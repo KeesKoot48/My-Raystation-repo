@@ -8,10 +8,10 @@ from numpy import nextafter
 from math import log, sqrt, pow
 
 # custom
-from citor.enum_module import BaselineToxicityPhysician, BaselineToxicityPatient,\
+from enum_module import BaselineToxicityPhysician, BaselineToxicityPatient,\
      SexPatient, TumorSite, TreatmentModality
-from citor.constants import PredictorValueConstants
-from citor.utilities import set_values_with_lambda_function_to_zero
+from constants import PredictorValueConstants
+from utilities import set_values_with_lambda_function_to_zero
 
 # NOTA BENE: If a roi is not available, the (corresponding) predictor value is set to zero. 
 def create_predictor_dictionary(ids):

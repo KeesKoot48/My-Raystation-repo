@@ -6,10 +6,10 @@ from tkinter import messagebox
 from datetime import date
 
 # custom
-from citor.enum_module import BaselineToxicityPhysician, BaselineToxicityPatient,\
+from enum_module import BaselineToxicityPhysician, BaselineToxicityPatient,\
      SexPatient, TumorSite, TreatmentModality, PostOperative, convert_enum_dict_to_enum
-from citor.constants import TestScriptsConstants, SaveLocation
-from citor.utilities import dump_dict_to_json_file, open_json_file, \
+from constants import TestScriptsConstants, SaveLocation
+from utilities import dump_dict_to_json_file, open_json_file, \
     print_dictionary, map_dicta_in_dictb, is_json_function
 
 from connect import get_current
