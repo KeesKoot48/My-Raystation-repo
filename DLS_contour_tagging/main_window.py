@@ -97,7 +97,7 @@ class RootWindow(Tk):
         self.dls_segmentation_data_dict = {}
         self.structure_set_ct_scan_name = ""
 
-        self.dls_roi_list, self.model_id, self.structure_set_ct_scan_name = get_the_dl_segmented_and_filled_rois(self.case, self.examination)
+        self.dls_roi_list, self.model_id, self.structure_set_ct_scan_name = get_the_dl_segmented_and_filled_rois(self.case)
 
         # TODO: discuss anonimyze\encrypt the username and patientID for data collection.
         self.dls_segmentation_data_dict["username"] = System.Environment.UserName
