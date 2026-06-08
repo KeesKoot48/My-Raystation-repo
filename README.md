@@ -1,4 +1,5 @@
 
+
 # My-Raystation-repo
 Sharing raystation scripts for automation in the clinic. 
 
@@ -11,5 +12,6 @@ Also, you see an example of the json file where the filled in data is written to
 Make a PSQA plan on your phantom:
 
 citor (Comprehensive Individual TOxicity Risk profile): per patient dashboard of acute and long term risk evaluation for head and neck patients. 
+<img width="1002" height="1112" alt="CitorProfile_ingevuld_autoplan" src="https://github.com/user-attachments/assets/e2bb4eb7-23c5-4c3c-92da-c6cdb7a5479b" />
 
 Various Example Scripts:
