@@ -1,6 +1,6 @@
 ########################################################################
 #                                                                      #
-# Gui module for DLS contour evaluation by CT RTTs (and automated tagging).  
+# Gui module for DLS contour evaluation by CT RTTs.  
 # KeesLandheer
 # January 19, 2026
 # Python version 3.11

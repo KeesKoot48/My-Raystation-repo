@@ -1,7 +1,7 @@
 ########################################################################
 #                                                                      #
 # Use for offline analysis of the exported voxelrois by the main script:
-# DLS_contour_tagging.py. 
+# DLS_contour_evaluation_form.py. 
 # This script imports the voxel rois on case.Examinations[0]. This can be 
 # used for analysis with RayStation functions, or the voxel roi can be 
 # converted to 2d contoursets or the structure set can be exported to Dicom 

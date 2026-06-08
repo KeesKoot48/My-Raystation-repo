@@ -1,6 +1,6 @@
 ########################################################################
 #                                                                      #
-# module for DLS contour evaluation by CT RTTs (and automated tagging).  
+# module for DLS contour evaluation by CT RTTs.  
 # Collection of functions that help with debugging and saving and loading 
 # the dl_segmentation_data dictionary. 
 # KeesLandheer

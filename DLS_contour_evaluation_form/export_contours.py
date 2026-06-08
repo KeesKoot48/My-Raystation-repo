@@ -1,7 +1,7 @@
 ########################################################################
 #                                                                      #
 # --- Export VoxelRois in seperate Thread as .npz files  ---
-# module part of DLS contour evaluation by CT RTTs (and automated tagging).  
+# module part of DLS contour evaluation by CT RTTs.  
 # Kees Landheer
 # Python version 3.11
 # version 1.0
