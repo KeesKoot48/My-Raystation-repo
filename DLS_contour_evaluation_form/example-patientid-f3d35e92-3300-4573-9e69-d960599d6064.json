@@ -1,0 +1,42 @@
+{
+    "username": "k.landheer",
+    "patient_id": "87654321",
+    "model_id": "2d80a3b2-f386-4b0c-a04e-2463606e5f84",
+    "treatment_site": "1:_2026-02-20_prostate",
+    "Raystation_version": "unknown",
+    "ct_scan": "CT 2| prostate",
+    "roi_list": [
+        {
+            "Rectum": {
+                "score": "LITTLE_ADJUSTED",
+                "text": "think e.g. of caudal/cranial spacious/cramped."
+            }
+        },
+        {
+            "Bladder": {
+                "score": "MANY_ADJUSTED",
+                "text": "think e.g. of caudal/cranial spacious/cramped."
+            }
+        },
+        {
+            "FemoralHead_L": {
+                "score": "CONTOUR_DELETED_AND_REDRAWN",
+                "text": "think e.g. of caudal/cranial spacious/cramped."
+            }
+        },
+        {
+            "FemoralHead_R": {
+                "score": "LITTLE_ADJUSTED",
+                "text": "think e.g. of caudal/cranial spacious/cramped."
+            }
+        },
+        {
+            "PenileBulb": {
+                "score": "MANY_ADJUSTED",
+                "text": "think e.g. of caudal/cranial spacious/cramped."
+            }
+        }
+    ],
+    "number_of_examinations_with_dl_contours": 1,
+    "general_comment": "Dit is wederom een nederlandse test"
+}
