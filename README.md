@@ -19,3 +19,5 @@ Per patient dashboard of acute and long term risk evaluation for head and neck p
 **Make a PSQA plan on your phantom:**
 
 **Various Example Scripts:**
+
+Load the clinical goals based on the name of the template. NB.: In our clinic we collect the dicts in an excel for checking. 
