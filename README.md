@@ -13,7 +13,8 @@ Also, you see an example of the json file where the filled in data is written to
 
 **CITOR (Comprehensive Individual TOxicity Risk profile):**
 
-Per patient dashboard of acute and long term risk evaluation for head and neck patients. 
+Per patient dashboard of acute and long term risk evaluation for head and neck patients. Based on paper: "Comprehensive toxicity risk profiling in radiation therapy for head and
+neck cancer: A new concept for individually optimised treatment" by Lisa van den Bosch et al., Radiotherapy and Oncology 157 (2021) 147–154.
 <img width="1002" height="1112" alt="CitorProfile_ingevuld_autoplan" src="https://github.com/user-attachments/assets/e2bb4eb7-23c5-4c3c-92da-c6cdb7a5479b" />
 
 **Make a PSQA plan on your phantom:**
